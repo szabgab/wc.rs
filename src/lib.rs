@@ -21,16 +21,15 @@ mod tests {
 
     #[test]
     fn wc_works() {
-        let filename = "files/hello.txt";
-        let result = wc(&filename);
-        assert_eq!(result, 11);
+        let cases = [
+            ("files/hello.txt", 11),
+            ("files/empty.txt", 0),
+            ("files/hello_with_newline.txt", 12),
+        ];
 
-        let filename = "files/empty.txt";
-        let result = wc(&filename);
-        assert_eq!(result, 0);
-
-        let filename = "files/hello_with_newline.txt";
-        let result = wc(&filename);
-        assert_eq!(result, 12);
+        for (filename, bytes) in cases {
+            let result = wc(&filename);
+            assert_eq!(result, bytes);
+        }
     }
 }
