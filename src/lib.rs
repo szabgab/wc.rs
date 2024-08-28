@@ -1,4 +1,3 @@
-
 pub fn wc_of_string(text: &str) -> usize {
     text.len()
 }
@@ -15,7 +14,7 @@ mod tests {
     #[test]
     fn wc_of_string_works() {
         let filename = "files/hello.txt";
-        let content = std::fs::read_to_string(filename).unwrap();        
+        let content = std::fs::read_to_string(filename).unwrap();
         let result = wc_of_string(&content);
         assert_eq!(result, 11);
     }
@@ -26,5 +25,4 @@ mod tests {
         let result = wc(&filename);
         assert_eq!(result, 11);
     }
-
 }
