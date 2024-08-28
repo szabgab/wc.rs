@@ -9,7 +9,9 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = wc("Hello world");
+        let filename = "files/hello.txt";
+        let content = std::fs::read_to_string(filename).unwrap();
+        let result = wc(&content);
         assert_eq!(result, 11);
     }
 }
