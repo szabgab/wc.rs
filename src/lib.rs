@@ -1,6 +1,8 @@
 pub fn wc_of_string(text: &str) -> (usize, usize) {
+    let bytes = text.len();
     let words = text.split_whitespace().collect::<Vec<_>>().len();
-    (text.len(), words)
+
+    (bytes, words)
 }
 
 pub fn wc(filename: &str) -> (usize, usize) {
