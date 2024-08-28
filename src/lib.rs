@@ -25,6 +25,8 @@ mod tests {
             ("files/hello.txt", 11),
             ("files/empty.txt", 0),
             ("files/hello_with_newline.txt", 12),
+            ("files/spaces.txt", 47),
+            ("files/unicode.txt", 12),
         ];
 
         for (filename, bytes) in cases {
