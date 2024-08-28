@@ -24,5 +24,13 @@ mod tests {
         let filename = "files/hello.txt";
         let result = wc(&filename);
         assert_eq!(result, 11);
+
+        let filename = "files/empty.txt";
+        let result = wc(&filename);
+        assert_eq!(result, 0);
+
+        let filename = "files/hello_with_newline.txt";
+        let result = wc(&filename);
+        assert_eq!(result, 12);
     }
 }
